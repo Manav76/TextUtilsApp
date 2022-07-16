@@ -36,7 +36,7 @@ function App() {
     <Navbar title = "TextUtils" mode = {mode} toggleMode = {toggleMode} />
     <Alert  alert = {alert} />
     <div className = "container my-3">
-      <Textform heading="Enter the text to analyze below"  />
+      <Textform heading="Enter the text to analyze below" mode = {mode} toggleMode = {toggleMode}  />
     </div>
   </>
   );
