@@ -1,36 +1,22 @@
 import { isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils'
 import React ,{useState} from 'react'
 
-export default function About() {
-  const[myStyle , setMyStyle] = useState(
-    {
-        color: 'white',
-        backgroundColor: 'black'
-    }
-  )
-  const[btntext ,setBtnText] = useState("Enable Dark Mode")
-  const toggleStyle = () =>{
-    if(myStyle.color == "white"){
-        setMyStyle(
-            {
-                color: 'black',
-                backgroundColor: 'white',
-                border: '1px solid white'
-            }
-        )
-        setBtnText("Enable Light Mode");
-    }
-    else{
-        setMyStyle({
-            color: 'white',
-            backgroundColor: 'black'
-        })
-        setBtnText("Enable Dark Mode");
-    }
+export default function About(props) {
+  // const[myStyle , setMyStyle] = useState(
+  //   {
+  //       color: 'white',
+  //       backgroundColor: 'black'
+  //   }
+  // )
+  let myStyle = {
+    color: props.mode ==='dark'?'white':'#042743',
+    backgroundColor: props.mode ==='dark'?'rgb(36 74 104)':'white', 
   }
+ 
+  
   return (
     <div className = "container" style = {myStyle}>
-        <h1 className='my-3'>About Us</h1>
+        <h1 className='my-3' style={{color: props.mode ==='dark'?'white':'#042743'}}>About Us</h1>
     <div class="accordion" id="accordionExample"  style = {myStyle}>
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne" style = {myStyle}>
@@ -70,7 +56,6 @@ export default function About() {
   </div>
 </div>      
 <div className="container my-3">
-<button onClick = {toggleStyle} type = "button" class = "btn btn-primary">{btntext}</button>
 </div>
     </div>
   )

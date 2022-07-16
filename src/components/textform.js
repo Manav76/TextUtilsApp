@@ -32,13 +32,13 @@ export default function Textform(props) {
             rows="9"
           ></textarea>
         </div>
-        <button className="btn btn-primary mx" onClick={handleUpClick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
           Convert to Uppercase
         </button>
-        <button className="btn btn-primary mx-3" onClick={handleLoClick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>
           Convert to Lowercase
         </button>
-        <button className="btn btn-primary mx-3" onClick={removeExtraSpaces}>
+        <button className="btn btn-primary mx-1 my-1" onClick={removeExtraSpaces}>
           Remove Extra Space
         </button>
       </div>
